@@ -1,0 +1,5 @@
+# .prettierrc or .prettierrc.yaml
+trailingComma: "commonJS"
+tabWidth: 4
+semi: false
+singleQuote: true
