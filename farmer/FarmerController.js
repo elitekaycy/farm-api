@@ -1,4 +1,4 @@
-const FarmerRepository = require('.farmerRepo');
+import FarmerRepository from './farmerRepo.js';
 
 class FarmerController {
   static async createFarmer(req, res) {
@@ -11,6 +11,15 @@ class FarmerController {
     }
   }
 
+  static async getAllFarms(req, res){
+    try {
+      const farmers = await FarmerRepository.getAllFarmers()
+      return res.status(200).json(farmers)
+    }
+    catch(err) {
+      return res.status(500).json({ error: "Failed to get all farmers"})
+    }
+  }
 
   static async getFarmerById(req, res) {
     const { id } = req.params;
@@ -40,4 +49,4 @@ class FarmerController {
   }
 }
 
-module.exports = FarmerController;
+export default FarmerController

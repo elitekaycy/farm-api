@@ -1,5 +1,5 @@
-const {Sequelize, DataTypes} = require('sequelize');
-const sequelize = require('../utils/db'); // Import your Sequelize connection
+import sequelize from '../utils/db.js';
+import {Sequelize, DataTypes } from 'sequelize';
 
 const Farmer = sequelize.define('Farmer', {
     id: {
@@ -26,7 +26,7 @@ const Farmer = sequelize.define('Farmer', {
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
+        unique: false,
         validate: {
             isEmail: true
         }
@@ -36,4 +36,5 @@ const Farmer = sequelize.define('Farmer', {
     }
 });
 
-module.exports = Farmer;
+
+export default Farmer

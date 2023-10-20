@@ -1,4 +1,4 @@
-import {Farmer} from "../models";
+import {Farmer} from "../models/index.js";
 
 class FarmerRepository {
 
@@ -35,5 +35,4 @@ class FarmerRepository {
     }
 }
 
-
-module.exports = FarmerRepository
+export default FarmerRepository

@@ -1,4 +1,4 @@
-import { Type } from "../models";
+import { Type } from "../models/index.js";
 
 
 class TypeRepository {
@@ -22,4 +22,4 @@ class TypeRepository {
     }
 }
 
-module.exports = TypeRepository
+export default TypeRepository

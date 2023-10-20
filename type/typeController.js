@@ -1,4 +1,4 @@
-import TypeRepository from './typeRepo'
+import TypeRepository from './typeRepo.js'
 
 class TypeController {
     static async createType(req, res) {
@@ -23,4 +23,4 @@ class TypeController {
     }
 }
 
-module.exports = TypeController
+export default TypeController

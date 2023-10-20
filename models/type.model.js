@@ -1,5 +1,6 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../utils/db'); // Import your Sequelize connection
+import { Sequelize, DataTypes } from 'sequelize'
+import sequelize from '../utils/db.js'
+
 
 const Type = sequelize.define('Type', {
   id: {
@@ -13,4 +14,4 @@ const Type = sequelize.define('Type', {
   },
 });
 
-module.exports = Type;
+export default Type

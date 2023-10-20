@@ -5,4 +5,4 @@ const sequelize = new Sequelize('farmapi', 'postgres', 'root', {
   dialect: 'postgres',
 });
 
-module.exports = sequelize;
+export default sequelize

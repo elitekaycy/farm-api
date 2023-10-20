@@ -1,5 +1,6 @@
-const Farmer = require('./farmer.model')
-const Type = require('./type.model')
-const Product = require('./product.model')
+import Farmer from './farmer.model.js'
+import Type from './type.model.js'
+import Product from './product.model.js'
 
-module.exports = { Farmer, Type, Product}
+
+export { Farmer, Type, Product}

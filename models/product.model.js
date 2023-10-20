@@ -1,8 +1,9 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../utils/db');
+import { Sequelize, DataTypes } from 'sequelize'
+import sequelize from '../utils/db.js';
 
-const Type = require('./type.model')
-const Farmer = require('./farmer.model')
+import Type from './type.model.js';
+import Farmer from './farmer.model.js';
+
 
 const Product = sequelize.define('Product', {
   name: {
@@ -38,4 +39,4 @@ Product.belongsTo(Farmer, {
   as: 'farmer',
 });
 
-module.exports = Product;
+export default Product

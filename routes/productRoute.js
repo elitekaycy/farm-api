@@ -1,6 +1,6 @@
 import express from 'express'
 const router = express.Router();
-import ProductController from '../Product/ProductController'
+import ProductController from '../Product/ProductController.js'
 
 
 router.post('/products', ProductController.createProduct);
@@ -10,4 +10,4 @@ router.get('/products/farmer/:farmerId', ProductController.getProductsByFarmer);
 router.get('/products/:productId', ProductController.getProductById);
 
 
-module.exports = router;
+export default router

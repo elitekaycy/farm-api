@@ -1,4 +1,4 @@
-import { Type, Product, Farmer } from "../models";
+import { Type, Product, Farmer } from "../models/index.js";
 
 class ProductRepository {
   static async createProduct(productData) {
@@ -51,4 +51,4 @@ class ProductRepository {
   }
 }
 
-module.exports = ProductRepository;
+export default ProductRepository
