@@ -25,7 +25,7 @@ const Product = sequelize.define('Product', {
     allowNull: false,
   },
   image: {
-    type: DataTypes.BLOB('long')
+    type: DataTypes.STRING
   },
 });
 

@@ -4,8 +4,14 @@ class ProductController {
 
   static async createProduct(req, res) {
     try {
-      console.log("req image ", req.body)
-      const productData = req.body;
+
+
+      console.log("req file is  ", req.file)
+      console.log("req body ", req.body, req.body.name)
+
+      const fileLink = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
+
+      const productData = {...req.body, image: fileLink}
       const product = await ProductRepository.createProduct(productData);
       return res.status(201).json(product);
     } catch (error) {
@@ -16,12 +22,6 @@ class ProductController {
   static async getAllProducts(req, res) {
     try {
       const products = await ProductRepository.getAllProducts();
-      products.forEach(product => {
-        // let newImage = btoa(String.fromCharCode(...new Uint8Array(image)));
-        // product.image = newImage
-        product.image = product.image.toString('base64')
-        console.log(product.image)
-      })
       return res.json(products);
     } catch (error) {
       return res.status(500).json({ error: 'Failed to retrieve products' });
