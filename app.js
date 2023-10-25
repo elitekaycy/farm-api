@@ -3,6 +3,7 @@ import sequelize from './utils/db.js'
 import productsRoutes from './routes/productRoute.js'
 import typesRoutes from './routes/typeRoute.js'
 import farmersRoutes from './routes/farmerRoute.js'
+import userRoute from './routes/userRoute.js'
 import cors from 'cors'
 
 const app = express();
@@ -21,6 +22,7 @@ app.use("/uploads", express.static("uploads"));
 app.use('/api', productsRoutes);
 app.use('/api', typesRoutes);
 app.use('/api', farmersRoutes);
+app.use('/api', userRoute)
 
 
 async function init() {

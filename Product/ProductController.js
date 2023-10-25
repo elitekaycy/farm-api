@@ -4,8 +4,6 @@ class ProductController {
 
   static async createProduct(req, res) {
     try {
-
-
       console.log("req file is  ", req.file)
       console.log("req body ", req.body, req.body.name)
 
