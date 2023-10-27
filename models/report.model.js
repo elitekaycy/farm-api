@@ -1,5 +1,5 @@
 import { Sequelize, DataTypes } from 'sequelize';
-import sequelize from '../utils/db';
+import sequelize from '../utils/db.js';
 
 const Report = sequelize.define('report', {
   // Unique identifier for the report

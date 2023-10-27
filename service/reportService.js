@@ -1,8 +1,8 @@
-import { Report } from "../models";
+import { Report } from "../models/index.js";
 
-const USER_REPORT = 'USER'
-const PURCHASE_REPORT = 'PURCHASE'
-const SALES_REPORT = 'SALES'
+// const USER_REPORT = 'USER'
+// const PURCHASE_REPORT = 'PURCHASE'
+// const SALES_REPORT = 'SALES'
 
 
 

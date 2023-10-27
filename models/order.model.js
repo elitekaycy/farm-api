@@ -1,5 +1,7 @@
-import sequelize from "../utils/db";
+import sequelize from "../utils/db.js";
 import { Sequelize, DataTypes } from "sequelize";
+import User from "./user.model.js";
+import Product from "./product.model.js";
 
 const Order = sequelize.define('order', {
   userId: {
@@ -27,9 +29,18 @@ const Order = sequelize.define('order', {
   // Shipping address
   location: {
     type: DataTypes.STRING,
-    allowNull: false,
   },
   // Additional fields as needed (e.g., payment details, delivery date)
+});
+
+Order.belongsTo(User, {
+  foreignKey: 'userId',
+  as: 'user',
+});
+
+Order.belongsTo(Product, {
+  foreignKey: 'productId',
+  as: 'product',
 });
 
 export default Order

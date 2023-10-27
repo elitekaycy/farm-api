@@ -3,9 +3,14 @@ const router = express.Router();
 import UserController from '../user/userController.js'
 import { upload } from './productRoute.js';
 
-router.post('/user',upload.single("image"), UserController.createUser);
-router.get('/login', UserController.login)
-router.get('/user/order', UserController.placeBatchOrder);
+router.post('/user', UserController.createUser);
+router.post('/login', UserController.login)
+router.post('/order', UserController.placeBatchOrder);
+router.get('/order/:id', UserController.viewOrderHistory)
+
+//orders
+router.get('/orders/:type', UserController.viewOrders)
+router.get('/orders', UserController.viewAllOrders)
 
 
 
