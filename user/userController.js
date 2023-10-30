@@ -147,6 +147,57 @@ class UserController {
             return res.status(500).json({error: err})
         }
     }
+
+    static async ordStatus(req, res) {
+        console.log("req bodu ", req.body)
+        try {
+            const order = await Order.findByPk(req.body.id)
+
+            console.log("order ", order)
+
+            order['status'] = req.body.status
+            order.save()
+            return order 
+        }
+        catch(err) {
+            return res.status(500).json({ error: "unable to change status"})
+        }
+    }
+
+
+    static async createUserReport(req, res) {
+        console.log("user req ", req.body)
+
+        try {
+
+            await createReport({
+                userId: req.body.id,
+                reportedId: req.body.productId,
+                reportType: 'USER_REPORT',
+                description: req.body.description,
+            });
+
+            return res.status(201).json({ report: true})
+
+        }
+        catch(err) {
+            return res.status(500).json({ error: err})
+        }
+
+    }
+
+    static async getAllUsers(req, res) {
+
+        const users = await User.findAll()
+        if(users) return res.status(200).json(users)
+    }
+
+    static async getAllReports(req, res) {
+
+        const reports = await Report.findAll()
+        if(reports) return res.status(200).json(reports)
+    }
+
 }
 
 export default UserController
